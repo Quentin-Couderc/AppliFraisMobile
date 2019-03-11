@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppliFraisMobile.Views.Comptable.SuiviFrais">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Frame BorderColor="Gray" CornerRadius="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Selectionner un utilisateur" Grid.Row="0" FontAttributes="Bold" FontSize="Large" />
+                    <Picker Title="User" Grid.Row="1" HorizontalOptions="Center">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Button Text="Valider" Grid.Row="2" BackgroundColor="#2196F3" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label Text="Choisir autre utilisateur" TextColor="#2196F3" Grid.Row="3" HorizontalOptions="Center"/>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="1" BorderColor="Gray" CornerRadius="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Fiche de frais du mois : " FontAttributes="Bold" FontSize="Medium" />
+                    <Label Text="{Binding Mois}" Grid.Column="1"/>
+                    <Label Text="Etat : " Grid.Row="1"/>
+                    <Label Text="{Binding Etat}" Grid.Row="1" Grid.Column="1"/>
+                    <Label Text="Montant validé : " Grid.Row="2"/>
+                    <Label Text="{Binding Montant}" Grid.Row="2" Grid.Column="1"/>
+                    <Frame Grid.Row="3" BorderColor="#2196F3" Grid.ColumnSpan="3">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Forfait Etape" FontAttributes="Bold"/>
+                            <Label Text="Frais Kilométrique" FontAttributes="Bold" Grid.Column="1"/>
+                            <Label Text="Nuitée Hôtel" FontAttributes="Bold" Grid.Column="2"/>
+                            <Label Text="Repas Restaurant" FontAttributes="Bold" Grid.Column="3"/>
+                            <Label Text="{Binding Etape}" Grid.Row="1"/>
+                            <Label Text="{Binding Kilometre}" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="{Binding Nuit}" Grid.Row="1" Grid.Column="2"/>
+                            <Label Text="{Binding Repas}" Grid.Row="1" Grid.Column="3"/>
+                            
+                        </Grid>
+                    </Frame>
+                    <Label Text="Eléments forfaitisés" Grid.Row="4"/>
+                    <Frame Grid.Row="5" BorderColor="#2196F3" Grid.ColumnSpan="3">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Date" FontAttributes="Bold" Grid.Column="0"/>
+                            <Label Text="Libelle" FontAttributes="Bold" Grid.Column="1"/>
+                            <Label Text="Montant" FontAttributes="Bold" Grid.Column="2"/>
+                            <Label Text="{Binding Date}" Grid.Row="1"/>
+                            <Label Text="{Binding Libelle}" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="{Binding Montant}" Grid.Row="1" Grid.Column="2"/>
+                            
+                        </Grid>
+                    </Frame>
+                    <Label Text="Description des éléments hors forfait : " Grid.Row="6" Grid.ColumnSpan="2"/>
+                    <Label Text="{Binding nbrJustificatif}" Grid.Row="6" Grid.Column="2"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

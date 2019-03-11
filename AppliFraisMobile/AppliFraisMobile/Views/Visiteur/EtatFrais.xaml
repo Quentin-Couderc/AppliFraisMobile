@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppliFraisMobile.Views.Visiteur.EtatFrais">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Frame BorderColor="Gray" CornerRadius="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Mes fiches de frais" FontAttributes="Bold" FontSize="Large"/>
+                    <Label Text="Mois à sélectionner : " Grid.Row="1" FontSize="Medium"/>
+                    <Picker Title="Mois" Grid.Row="2" HorizontalOptions="Center" Grid.ColumnSpan="2">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Button Text="Valider" BackgroundColor="#2196F3" TextColor="White" FontAttributes="Bold" Grid.Row="3" HorizontalOptions="End"/>
+                    <Button Text="Effacer" BackgroundColor="Red" TextColor="White" FontAttributes="Bold" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start"/>
+                </Grid>
+            </Frame>
+            <Frame BorderColor="Gray" CornerRadius="0" Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fiche de frais du mois : "/>
+                        <Label Text="{Binding Mois}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Grid.Row="1">
+                        <Label Text="Etat : "/>
+                        <Label Text="{Binding Etat}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Grid.Row="2">
+                        <Label Text="Montant validé : "/>
+                        <Label Text="{Binding Montant}"/>
+                    </StackLayout>
+                    <Frame Grid.Row="3" BorderColor="#2196F3" Grid.ColumnSpan="3">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Forfait Etape" FontAttributes="Bold"/>
+                            <Label Text="Frais Kilométrique" FontAttributes="Bold" Grid.Column="1"/>
+                            <Label Text="Nuitée Hôtel" FontAttributes="Bold" Grid.Column="2"/>
+                            <Label Text="Repas Restaurant" FontAttributes="Bold" Grid.Column="3"/>
+                            <Label Text="{Binding Etape}" Grid.Row="1"/>
+                            <Label Text="{Binding Kilometre}" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="{Binding Nuit}" Grid.Row="1" Grid.Column="2"/>
+                            <Label Text="{Binding Repas}" Grid.Row="1" Grid.Column="3"/>
+                        </Grid>
+                    </Frame>
+                    <Label Text="Eléments forfaitisés" Grid.Row="4"/>
+                    <Frame Grid.Row="5" BorderColor="#2196F3" Grid.ColumnSpan="3">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Date" FontAttributes="Bold" Grid.Column="0"/>
+                            <Label Text="Libelle" FontAttributes="Bold" Grid.Column="1"/>
+                            <Label Text="Montant" FontAttributes="Bold" Grid.Column="2"/>
+                            <Label Text="{Binding Date}" Grid.Row="1"/>
+                            <Label Text="{Binding Libelle}" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="{Binding Montant}" Grid.Row="1" Grid.Column="2"/>
+                        </Grid>
+                    </Frame>
+                    <Label Text="Description des éléments hors forfait : " Grid.Row="6" Grid.ColumnSpan="2"/>
+                    <Label Text="{Binding nbrJustificatif}" Grid.Row="6" Grid.Column="2"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

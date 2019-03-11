@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppliFraisMobile.Views.ListeUser">
+    <ContentPage.Content>
+        <Frame BorderColor="Gray" CornerRadius="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Liste des Utilisateurs" Grid.Row="0" FontAttributes="Bold" FontSize="Large" Grid.ColumnSpan="3"/>
+                <Label Text="Id" Grid.Row="1" Grid.Column="0" FontAttributes="Bold"/>
+                <Label Text="Nom" Grid.Row="1" Grid.Column="1" FontAttributes="Bold"/>
+                <Label Text="Prenom" Grid.Row="1" Grid.Column="2" FontAttributes="Bold"/>
+                <Label Text="Login" Grid.Row="1" Grid.Column="3" FontAttributes="Bold"/>
+                <Label Text="Mot de passe" Grid.Row="1" Grid.Column="4" FontAttributes="Bold"/>
+                <Label Text="Groupe" Grid.Row="1" Grid.Column="5" FontAttributes="Bold"/>
+                <ListView x:Name="UserListView"
+                          ItemsSource="{Binding Visiteur}"                          
+                          Margin="0"
+                          Grid.Row="2"
+                          HeightRequest="20">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Visiteur.Id}"/>
+                                        <Label Text="{Binding Visiteur.Nom}"/>
+                                        <Label Text="{Binding Visiteur.Prenom}"/>
+                                        <Label Text="{Binding Visiteur.Login}"/>
+                                        <Label Text="{Binding Visiteur.Mdp}"/>
+                                        <Label Text="{Binding Visiteur.Groupe}"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Ajouter un utilisateurs" Grid.Row="3" FontAttributes="Bold" FontSize="Large" Grid.ColumnSpan="3"/>
+                <Label Text="Nom" Grid.ColumnSpan="2" Grid.Row="4"/>
+                <Label Text="Prenom" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="4"/>
+                <Label Text="Login" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="4"/>
+                <Entry Placeholder="Nom" Grid.ColumnSpan="2" Grid.Row="5"/>
+                <Entry Placeholder="Prenom" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="5"/>
+                <Entry Placeholder="Login" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="5"/>
+                
+                <Label Text="Mot de passe" Grid.ColumnSpan="2" Grid.Row="6"/>
+                <Label Text="Véhicule" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="6"/>
+                <Label Text="Groupe" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="6"/>
+                <Entry Placeholder="Mot de passe" Grid.ColumnSpan="2" Grid.Row="7"/>
+                <Picker Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="7">
+                    <Picker.Items>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="7">
+                    <Picker.Items>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button Text="Ajouter" BackgroundColor="#2196F3" TextColor="White" FontAttributes="Bold" Grid.Row="8"/>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

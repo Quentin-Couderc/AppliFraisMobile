@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppliFraisMobile.Views.Comptable.SelectUserValidation">
+    <ContentPage.Content>
+        <Frame BorderColor="Gray" CornerRadius="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Selectionner un utilisateur" Grid.Row="0" FontAttributes="Bold" FontSize="Large" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"/>
+                <Picker Title="User" Grid.Row="1" HorizontalOptions="Center" Grid.ColumnSpan="2">
+                    <Picker.Items>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Picker Title="Mois" Grid.Row="2" HorizontalOptions="Center" Grid.ColumnSpan="2">
+                    <Picker.Items>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button Text="Effacer" Grid.Row="3" BackgroundColor="Red" TextColor="White" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="End"/>
+                <Button Text="Valider" Grid.Row="3" BackgroundColor="#2196F3" TextColor="White" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Start"/>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

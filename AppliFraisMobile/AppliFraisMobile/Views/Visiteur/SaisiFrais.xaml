@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppliFraisMobile.Views.Visiteur.SaisiFrais">
+    <ContentPage.Content>
+        <Frame BorderColor="Gray" CornerRadius="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Horizontal" Grid.Row="0">
+                    <Label Text="Renseigner ma fiche de frais du mois " FontSize="Large" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+                    <Label Text="{Binding Mois}" FontSize="Large" FontAttributes="Bold"/>
+                </StackLayout>
+                <Frame BorderColor="#2196F3" Grid.Column="0" Grid.Row="1">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Eléments forfaitisés" FontSize="Medium" FontAttributes="Bold"/>
+                        <Label Text="Forfait Etape"/>
+                        <Entry/>
+                        <Label Text="Frais Kilométrique"/>
+                        <Entry/>
+                        <Label Text="Nuitée Hôtel"/>
+                        <Entry/>
+                        <Label Text="Repas Restaurant"/>
+                        <Entry/>
+                        <Button Text="Valider" BackgroundColor="#2196F3" TextColor="White" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="#2196F3" Grid.Column="1" Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Eléments hors forfait"  FontSize="Medium" FontAttributes="Bold" Grid.Row="0"/>
+                        <Frame BorderColor="#2196F3" Grid.Row="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="Date" FontAttributes="Bold"/>
+                                <Label Text="Libellé" Grid.Column="1" FontAttributes="Bold"/>
+                                <Label Text="Montant" Grid.Column="2" FontAttributes="Bold"/>
+                                <Label Text="{Binding Date}" Grid.Row="1"/>
+                                <Label Text="{Binding Libellé}" Grid.Row="1" Grid.Column="1"/>
+                                <Label Text="{Binding Montant}" Grid.Row="1" Grid.Column="2"/>
+                            </Grid>
+                        </Frame>
+                        <Label Text="Nouvel éléments hors forfait" Grid.Row="2" FontSize="Medium" FontAttributes="Bold"/>
+                        <Label Text="Date" Grid.Row="3"/>
+                        <Entry Grid.Row="4"/>
+                        <Label Text="Libellé" Grid.Row="5"/>
+                        <Entry Grid.Row="6"/>
+                        <Label Text="Montant" Grid.Row="7"/>
+                        <Entry Grid.Row="8"/>
+                        <Button Text="Valider" BackgroundColor="#2196F3" TextColor="White" FontAttributes="Bold" Grid.Row="9"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
