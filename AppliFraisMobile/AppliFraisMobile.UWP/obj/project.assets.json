@@ -385,7 +385,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -944,7 +944,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -1504,7 +1504,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -1885,7 +1885,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -2444,7 +2444,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -3004,7 +3004,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -3563,7 +3563,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -4123,7 +4123,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "3.5.0.169047",
+          "Xamarin.Forms": "3.6.0.220655",
           "sqlite-net-pcl": "1.5.231"
         },
         "compile": {
@@ -8218,5 +8218,24 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Passage à une version antérieure du package détecté : Xamarin.Forms de 3.6.0.220655 à 3.5.0.169047. Référencez le package directement à partir du projet pour sélectionner une version différente. \r\n AppliFraisMobile.UWP -> AppliFraisMobile -> Xamarin.Forms (>= 3.6.0.220655) \r\n AppliFraisMobile.UWP -> Xamarin.Forms (>= 3.5.0.169047)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299",
+        "UAP,Version=v10.0.16299/win10-arm",
+        "UAP,Version=v10.0.16299/win10-arm-aot",
+        "UAP,Version=v10.0.16299/win10-arm64-aot",
+        "UAP,Version=v10.0.16299/win10-x64",
+        "UAP,Version=v10.0.16299/win10-x64-aot",
+        "UAP,Version=v10.0.16299/win10-x86",
+        "UAP,Version=v10.0.16299/win10-x86-aot"
+      ]
+    }
+  ]
 }

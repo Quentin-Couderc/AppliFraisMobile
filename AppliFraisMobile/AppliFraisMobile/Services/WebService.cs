@@ -1,8 +1,12 @@
-﻿using System;
+﻿using AppliFraisMobile.Views;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace AppliFraisMobile.Services
 {
@@ -46,6 +50,47 @@ namespace AppliFraisMobile.Services
                 retourReponse = "Erreur - " + response.StatusCode + " - reponse : " + response.Content + " - requete : " + response.RequestMessage;
             }
             return retourReponse;
+        }
+
+        public async Task<ConnexionResult> Connexion()
+        {
+            string data;
+            XmlSerializer xml;
+            Connexion req = new Connexion();
+            xml = new XmlSerializer(typeof(Connexion));
+            XmlWriterSettings settings = new XmlWriterSettings
+            {
+                Encoding = Encoding.UTF8, // no BOM in a .NET string
+                Indent = true,
+                OmitXmlDeclaration = true
+            };
+            using (StringWriter textWriter = new StringWriter())
+            {
+                using (XmlWriter xmlWriter = XmlWriter.Create(textWriter, settings))
+                {
+                    xml.Serialize(xmlWriter, req);
+                }
+                data = textWriter.ToString();
+            }
+            string reponse = await ExecuteRequete(Method.POST, "Connexion", data);
+            if (reponse.StartsWith("Erreur - "))
+            {
+                ConnexionResult result = new ConnexionResult
+                {
+                    Error = reponse
+                };
+                return result;
+            }
+            else
+            {
+                ConnexionResponse response = new ConnexionResponse();
+                xml = new XmlSerializer(typeof(ConnexionResponse));
+                using (TextReader reader = new StringReader(reponse))
+                {
+                    response = (ConnexionResponse)xml.Deserialize(reader);
+                }
+                return response.GetVehiculeResult;
+            }
         }
     }
 }

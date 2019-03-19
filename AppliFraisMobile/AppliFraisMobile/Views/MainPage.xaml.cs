@@ -19,8 +19,8 @@ namespace AppliFraisMobile.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.ListeUser, new NavigationPage(new ListeUser()));
-            Detail = MenuPages[(int)MenuItemType.ListeUser];
+            MenuPages.Add((int)MenuItemType.Connexion, new NavigationPage(new Connexion()));
+            Detail = MenuPages[(int)MenuItemType.Connexion];
         }
 
         public async Task NavigateFromMenu(int id)
